@@ -1,13 +1,7 @@
 # https://www.codechef.com/NOV16/problems/ALEXTASK
 
 from itertools import permutations
-
-
-def lcm(numbers):
-    from fractions import gcd
-    x, y = numbers
-    return x*y//gcd(x, y)
-
+from fractions import gcd
 
 answer = []
 n = int(raw_input())
@@ -16,7 +10,8 @@ while n:
     numbers = map(int, raw_input().split())
     possible_lcm = []
     for i in permutations(numbers, 2):
-        possible_lcm.append(lcm(i))
+        x, y = i
+        possible_lcm.append(x*y//gcd(x, y))
 
     answer.append(sorted(possible_lcm)[0])
     n -= 1
