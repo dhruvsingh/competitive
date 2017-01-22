@@ -4,7 +4,5 @@
 for query in xrange(int(raw_input().strip())):
     x = long(raw_input().strip())
     count = 0
-    for a in xrange(1, x):
-        if a^x > x:
-            count += 1
-    print count
+    no_of_digits = len(str(bin(x))) - 2
+    print 2 ** no_of_digits - 1 - x
